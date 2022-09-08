@@ -1,0 +1,217 @@
+
+.auc {
+    
+    width: 800px;
+    height: 250px;
+    margin: 20px;
+    display: inline-flex;
+    border-radius: 8px;
+    background-color: #252525;
+}
+.auc:hover{
+    border-radius: 14px;
+    background-color: #252525cb;
+}
+
+.D-all{
+    position: relative;
+    left: 240px;
+    top: 20px;
+    display: block;
+}
+#title{
+    
+    font-size: 25px;
+}
+#des{
+    
+    font-size: 15px;
+}
+#price{
+    
+    font-size: 15px;
+}
+#Alink{
+    text-decoration: none;
+}
+#Alink:hover{
+    text-decoration: none;
+}
+.D-all span{
+    color: #fff;
+}
+.W-btn{
+    color: #fff;
+    text-decoration: none;
+    background: #525252;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.W-btn a{
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    
+  
+}
+
+#c-btn{
+    color: #fff;
+    text-decoration: none;
+    background: #525252;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+#c-btn a{
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  
+}
+#c-btn:hover{
+    border-radius: 10px;
+}
+.W-btn:hover{
+    border-radius: 10px;
+}
+#Bform{
+    height: 20px;
+    width: 200px;
+    background: #525252;
+    margin-left: 28px;
+    border-radius: 6px;
+    position: relative;
+    bottom: 40px;
+    border: none;
+}
+#Bform:hover{
+    box-shadow: 2px 2px #252525;
+}
+#Bform:focus{
+    border: none;
+    outline: none;
+}
+#p1{
+    color: #fff;
+    margin-left: 30px;
+    position: relative;
+    bottom: 25px;
+}
+#Bsub{
+    position: relative;
+    bottom: 40px;
+    background-color: #ffb341;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+}
+#Cbtn{
+    position: relative;
+    top: 30px;
+    right: 8px;
+    background-color: #dd9c39;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+}
+#Cform{
+    position: relative;
+    left: 63px;
+    background: #525252;
+    box-shadow: none;
+    border: none;
+    min-height: 110px;
+    max-width: 160px;
+    border-radius: 6px;
+    text-align: left;
+    padding-bottom: 40px;
+    
+}
+#Cform:focus{
+    outline: none;
+    background: #525252;
+}
+#Cform:active{
+    background: transparent;
+}
+#p2{
+    color: #fff;
+    position: relative;
+    left: 65px;
+    top: 10px;
+}
+#Dcom{
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #252525;
+    
+}
+#p3{
+    color: #fff;
+    padding-left: 10px;
+}
+#ap{
+    display: block;
+}
+#all{
+    display: inline-flex;
+    position: relative;
+    bottom: 40px;
+}
+#p5{
+   color: #ffb341;
+   text-align: center;
+   font-size: 17px;
+    font-family: sans-serif;
+   
+}
+.messages{
+    color: #ffb341;
+    position: relative;
+    bottom: 40px;
+}
+#list{
+    position: relative;
+    bottom:30px;
+}
+#image{
+    max-width: 350px;
+    width: auto;
+    height: auto;
+    max-height: 230px;
+    padding: 10px;
+}
+#Dimage{
+    width: auto;
+    max-width: 200px;
+    height: auto;
+    
+}
+#Dfcom{
+    margin-left: 200px;
+}
+#bi{
+    color: #dd9c39;
+    font-family: sans-serif;
+}
+#cond{
+    color: #dd9c39;
+}

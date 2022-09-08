@@ -1,0 +1,50 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" href="{% static 'auctions/register.css' %}">
+
+<style>
+        #p2{
+        margin-top: 100px;
+        color: #dd9c39;
+        font-family: cursive;
+        font-weight: 600;
+    }
+    .error{
+        position: relative;
+        left: 10px;
+        top: 50px;
+    }
+</style>
+{%endblock%}
+
+{% block body %}
+
+    <p id="p2">Register</p>
+
+    {% if message %}
+        <div class="error">{{ message }}</div>
+    {% endif %}
+    <di id="all">
+    <div id="Dlogin">
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="username" placeholder="Username" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email Address" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Register">
+    </form>
+    </div>
+    <p id="p1">Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+    </di>
+
+{% endblock %}

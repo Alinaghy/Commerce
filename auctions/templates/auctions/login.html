@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" href="{% static 'auctions/login.css' %}">
+
+<style>
+    #p2{
+        margin-top: 50px;
+        color: #ffc107;
+        font-family: cursive;
+        font-weight: 600;
+    }
+    .error{
+        position: relative;
+        left: 10px;
+        top: 50px;
+    }
+
+</style>
+{%endblock%}
+
+{% block body %}
+{% if message %}
+<div class="error">* {{ message }}</div>
+{% endif %}
+    <p id="p2">Login</p>
+
+
+    <di id="all">
+    <div id="Dlogin">
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Username" autocomplete="off">
+            <input class="form-control" type="password" name="password" placeholder="Password" autocomplete="off">
+        </div>
+        <input class="btn btn-primary" id="btn" type="submit" value="Login">
+    </form>
+    </div>
+    <p id="p1">Don't have an account?   <a href="{% url 'register' %}">Register here.</a></p>
+    </di>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+.auc {
+    
+    width: 600px;
+    height: 200px;
+    margin: 20px;
+    display: inline-flex;
+    border-radius: 8px;
+    background-color: #252525;
+}
+.auc:hover{
+    border-radius: 14px;
+    background-color: #252525cb;
+}
+
+.D-all{
+    margin-left: 30px;
+    display: block;
+}
+#title{
+    
+    font-size: 25px;
+}
+#des{
+    
+    font-size: 15px;
+}
+#price{
+    
+    font-size: 15px;
+}
+#Alink{
+    text-decoration: none;
+}
+#Alink:hover{
+    text-decoration: none;
+}
+.D-all span{
+    color: #fff;
+}
+h1{
+    color: #fff;
+}
+#image{
+
+width: auto;
+height: auto;
+max-height: 200px;
+max-width: 250px;
+padding: 10px;
+
+}
+#Dimage{
+width: auto;
+height: auto;
+}
+

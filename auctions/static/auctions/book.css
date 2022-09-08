@@ -1,0 +1,84 @@
+#all{
+    background-color: #252525cb;
+    width: 550px;
+    height: 400px;
+    display: block;
+    margin-left: 20px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 50px;
+}
+.input{
+    background: #525252;
+    border-radius: 6px;
+    border: none;
+    display: block;
+    margin: 10px;
+    height: 40px;
+    margin-left: 70px;
+    margin-top: 20px;
+    padding-left: 5px;
+}
+.input:focus{
+    outline: 2px solid #dd9b39d8;
+}
+#title{
+    position: relative;
+    top: 20px;
+    width: 200px;
+}
+::placeholder{
+    color: black;
+}
+#desc{
+    min-height: 100px;
+    position: relative;
+    top: 20px;
+    width: 300px;
+}
+#image{
+    position: relative;
+    top: 20px;
+    width: 300px;
+}
+#price{
+    position: relative;
+    top: 20px;
+    width: 185px;
+
+}
+#cat{
+    position: relative;
+    bottom: 42px;
+    left: 203px;
+    width: 100px;
+    height: 42px;
+}
+#sub{
+    position: relative;
+    bottom: 30px;
+    left: 70px;
+    background-color: #dd9c39;
+    width: 300px;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+}
+#p1{
+    color: #dd9c39;
+    transform: rotate(90deg);
+    font-family: sans-serif;
+    position: relative;
+    top: 125px;
+    font-size: 60px;
+    right: 150px;
+}
+#p2{
+    font-family: sans-serif;
+    color: #fff;
+    position: relative;
+    
+}
+.input:hover{
+    outline: 2px solid #dd9b39d8;
+}

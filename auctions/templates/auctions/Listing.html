@@ -1,0 +1,224 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" href="{% static 'auctions/Listing.css' %}">
+
+<style>
+    #list-1{
+        margin-top: 30px;
+        margin-left: 5px;
+        margin-bottom: 50px;
+        color: #dd9c39;
+        font-family: cursive;
+    }
+    .auc-1 {
+    width: 600px;
+    height: 300px;
+    margin: 20px;
+    display: inline-flex;
+    border-radius: 8px;
+    background-color: #252525;
+
+    }
+    #Dimage-1{
+    width: fit-content;
+    height: 90%;
+    margin: 2%;
+    }
+    #image-1{
+    width: auto;
+    height: 100%;
+    border-radius: 5px;
+    border: #6b6b6b 1px solid;
+    }
+    .D-all-1{
+        display: block;
+        margin-top: 10px;
+        width: fit-content;
+    }
+    .D-all-1 div{
+        color: white;
+        margin-top: 10px;
+
+    }
+    .watch-a{
+        text-decoration: none;
+        color: #a7a6a6;
+        position: relative;
+        top: 15px;
+    }
+    .watch-a:hover{
+        color: #dd9c39;
+        text-decoration: underline;
+    }
+    #Bform-1{
+    height: 30px;
+    width: 150px;
+    background: #525252;
+    border-radius: 6px;
+    border: none;
+
+    }
+    #p1-1{
+        color: #dd9c39;
+        display: block;
+    }
+    #title{
+        display: inline-flex;
+    }
+    #cond{
+        font-size: medium;
+        margin-left: 10px;
+    }
+    #bid-div{
+        margin-top: 50px;
+    }
+    #Bsub-1{
+        margin-bottom: 3px;
+    }
+    #comment-div{
+    width: 600px;
+    height: 300px;
+    margin: 20px;
+    display: inline-flex;
+    border-radius: 8px;
+    background-color: #252525;
+    }
+    #Dcom-1{
+    width: 350px;
+    height: 250px;
+    margin-top: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #6b6b6b80;
+    }
+    #add-com{
+        color: #dd9c39;
+        display: block;
+    }
+    #Cform-1{
+    background: #525252;
+    box-shadow: none;
+    border: none;
+    min-height: 150px;
+    max-width: 200px;
+    border-radius: 6px;
+    text-align: left;
+    padding-bottom: 40px;
+    }
+    #Cform-1:focus{
+    outline: none;
+    background: #525252;
+    }
+    #Cform-1:active{
+    background: transparent;
+    }
+    #Dfcom-1{
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    #mes-div{
+        height: 30px;
+        width: 50%;
+        margin-top: 20px;
+        color: #dd9c39;
+        margin-left: 10px;
+    }
+    #s-u{
+        color: #dd9c39;
+        font-size: medium;
+    }
+
+
+</style>
+{%endblock%}
+
+
+
+
+{% block body %}
+
+    <div id="mes-div">
+    {% if messages %}    <ul class="messages"></ul>
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}</ul>
+    {% endif %}
+    </div>
+    <h2 id="list-1">Listing <span id="s-u">created by {{Listing.username}}</span></h2>
+
+
+
+
+   
+
+<div id="all">
+
+<div id="ap">
+    <div class="auc-1">
+        <div id="Dimage-1">
+        <img src="{{Listing.image}}" id="image-1"></div>
+        <div class="D-all-1">
+                <div id="title"><b>{{Listing.title}}</b><div id="cond">{{Listing.conditions}}</div></div>
+                <div id="des">{{Listing.describtion}}</div>
+                <div id="price"><b>price : ${{Listing.current_price}}</b></div>
+                <div>category : {{Listing.category}}</div>
+
+
+
+            {% if y == 1  %}
+            <a href="{% url 'remove_watchlist' Listing.id %}" class="watch-a">Remove from watchlist</a>
+            {% endif %}
+            {% if y != 1  %}
+            <a href="{% url 'add_watchlist' Listing.id %}" class="watch-a">Add to watchlist</a>
+            {% endif %}
+            {% if T == 1 %}
+            <button  id="c-btn"><a href="{% url 'close' Listing.id %}">close auction</a></button>
+            {%endif%}
+
+
+            {% if Listing.conditions == "open" %}
+            <div id="bid-div">
+            <form action = "{% url 'Listing'  Listing.id %}" method="post">
+                {% csrf_token %}
+                <label id="p1-1">Bid on this auction</label>
+                <input type = "number" name="bid"  id="Bform-1">
+                <button id="Bsub-1" class="btn btn-outline-warning btn-sm" >submit</button>
+            </form>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<div id="comment-div">
+
+<div id="Dfcom-1">
+    <form action = "{% url 'comment'  Listing.id %}" method="post">
+        {% csrf_token %}
+        <label id="add-com">Add comment :</label>
+        <textarea type = "text" name="comment" id="Cform-1" ></textarea>
+        <button id="Cbtn-1" class="btn btn-outline-warning">comment</button>
+    </form>
+</div>
+    
+    
+<div id="Dcom-1">
+    <p id="p5">Comments</p>
+    {% for comment in comments %}
+    <p id="p3"><b id="bi">{{comment.user.username}}</b> : {{ comment.comment }}</p>
+    {% endfor %}
+</div>
+
+</div>  
+    
+    
+</div>
+  
+    
+{% endblock %}

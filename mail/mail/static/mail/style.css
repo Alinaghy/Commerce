@@ -1,0 +1,155 @@
+#ema{
+    margin-left: 20px;
+    
+}
+.post{
+    border: 1px solid black;
+    margin-bottom: 7px;
+    padding-left: 5px;
+    padding-top: 5px;
+    max-height: 35px;
+    position: relative;
+    border-radius: 3px;
+    animation-name: hide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+@keyframes hide{
+    0%{
+        opacity: 1;
+        height: 100%;
+        line-height: 100%;
+        margin-bottom: 4px;
+        
+       
+    }
+    75%{
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        margin-bottom: 4px;
+        
+    }
+    100%{
+        opacity: 0;
+        height: 0px;
+        line-height: 0px;
+        margin-bottom: 0px;
+        
+    }
+}
+
+#sub{
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 0.25rem;
+    margin-top: 10px;
+    text-align: center;
+    padding: 8px;
+    font-weight: 500;
+}
+#sub:hover{
+    background-color: #007bff;
+    color: white;
+}
+.archive{
+    display: inline-flex;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: absolute;
+    right: 0.5%;
+    top: 12%;
+    border: none;
+    border-radius: 3px;
+    
+}
+.archive:hover{
+    border: 1px solid black;
+}
+#sender1{
+    display: inline-flex;
+    margin-top: 4px;
+    
+    
+}
+#subject1{
+    display: inline-flex;
+    margin-top: 4px;
+    margin-left: 6px;
+}
+#timestamp1{
+    display: inline-flex;
+    
+    position: absolute;
+    right: 0%;
+    font-weight: lighter;
+    font-size: 14px;
+    margin-right: 95px;
+    margin-top: 4px;
+    
+}
+.unarchive{
+    display: inline-flex;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: absolute;
+    right: 0.5%;
+    top: 12%;
+    border: none;
+    border-radius: 3px;
+}
+.unarchive:hover{
+    border: 1px solid black;
+}
+#sender{
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+#recipiens{
+    margin-bottom: 0px;
+    
+}
+#subject{
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+.time{
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+.reply{
+    border-radius: 6px;
+    background-color: white;
+    color: #007bff;
+    border-color: #007bff;
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    border: 1px solid ;
+}
+.reply:hover{
+    background-color: #007bff;
+    color: white;
+}
+.reply:focus{
+    outline: none;
+    
+}
+#fill{
+    color: #007bff;
+}
+#bform{
+    display: inline-block;
+    margin-bottom: 0px;
+}
+.as{
+    display: inline-flex;
+}
+textarea {
+min-height: 200px;
+}
+#error{
+    color: red;
+}

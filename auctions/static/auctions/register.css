@@ -1,0 +1,67 @@
+
+#Dlogin{
+    width: 320px;
+    height: 340px;
+    background-color: #252525cb;
+    display: block;
+    border-radius: 8px;
+}
+.form-control{
+    height: 35px;
+    width: 250px;
+    background: #525252;
+    border-radius: 6px;
+    border: none;
+    margin: 10px;
+    padding-left: 10px;
+}
+.form-control:focus{
+    outline: 2px solid #dd9b39d8;
+}
+.form-group{
+    margin-left: 20px;
+    position: relative;
+    top: 30px;
+    
+    
+}
+::placeholder{
+    color: black;
+}
+#all{
+    
+    position: absolute;
+    left: 50%;
+    margin-left: -155px;
+    margin-top: -80px;
+}
+#p1{
+    color: #fff;
+    text-decoration: none;
+}
+#p2{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 60px;
+}
+#p1 a{
+    color: #dd9c39;
+    text-decoration: none;
+}
+.btn{
+    position: relative;
+    top: 42px;
+    left: 30px;
+    background-color: #dd9c39;
+    width: 253px;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+}
+.error{
+    color: #dd9c39;
+    position: relative;
+    bottom: 30px;
+}

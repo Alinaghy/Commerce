@@ -1,0 +1,38 @@
+{% extends "auctions/layout.html" %}
+{%load static%}
+{%block head%}
+<link rel="stylesheet" href="{% static 'auctions/book.css' %}">
+
+<style>
+    #all{
+        margin-top: 100px;
+    }
+    #p1{
+        margin-top: 72px;
+    }
+</style>
+{%endblock%}
+
+{% block body %}
+    
+    <div id="all">
+    <form action = "{% url 'book' %}" method="post">
+        {% csrf_token %}
+        
+        <input type = "text" name="title" placeholder="title" class="input" id="title" autocomplete="off">
+        <textarea type = "text" name="describtion" placeholder="describtion" class="input" id="desc"></textarea>
+        <input type = "text" name="image" placeholder="image url" class="input" id="image" autocomplete="off">
+        <input type = "number" name="current_price" placeholder="current_price" class="input" id="price" autocomplete="off">
+        
+        <select name="category" class="input" id="cat">
+           {% for cate in Cate %}
+                <option value="{{ cate }}" id="C">{{ cate }}</option>
+            {%endfor%}
+        </select>
+        
+        <button id="sub">submit</button>
+    </form>
+    </div>
+    <p id="p1">Create Listing</p>
+    
+{% endblock %}

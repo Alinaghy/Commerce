@@ -1,0 +1,60 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'auctions/index.css' %}">
+
+
+<style>
+    h2{
+        margin-top: 25px;
+        margin-left: 5px;
+        color: #ffc107;
+        font-family: cursive;
+    }
+    hr{
+    color: #ffc107;
+}
+
+
+</style>
+{%endblock%}
+
+
+
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <hr>
+    {% if messages %}<ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}</ul>{% endif %}
+    
+    <div class="all">
+    {% for book in books %}
+    <a href="{{ book.id }}" id="Alink"> 
+    <div class="auc">
+        <img src="{{book.image}}" id="image">
+        <div class="D-all">
+        <p>
+            <span id="title"><b>{{book.title}}</b></span>
+            <br>
+            <span id="des">{{book.describtion}}</span>
+            <br>
+            <span id="price">Price : ${{book.current_price}}</span>
+            <br>
+            <span id="cond">{{book.conditions}}</span>
+        </p>
+    </div>
+    </div></a>
+    
+    {%endfor%}
+    </div> 
+    
+    
+
+   
+    
+    
+        
+{% endblock %}

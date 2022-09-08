@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Auction{% endblock %}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        {% block head %}
+        {% endblock %}
+
+        <style>
+            body{
+                background-color: black;
+            }
+            #auctio-p{
+                color: #ffc107;
+                font-weight: 800;
+                font-family: cursive;
+            }
+            #user-name{
+              position: absolute;
+              right: 5%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'index' %}" id="auctio-p">Auction</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book' %}">Create new auction</a>
+                  </li>
+                  {% endif %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Category
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'category' 'book' %}">Book</a></li>
+                      <li><a class="dropdown-item" href="{% url 'category' 'flower' %}">Flower</a></li>
+                      <li><a class="dropdown-item" href="{% url 'category' 'car' %}">Car</a></li>
+                    </ul>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'watchlist' %}">Watchlist</a>
+                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'logout' %}">Log Out ({{user.username}})</a>
+                      </li>
+                  {% else %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'register' %}">Register</a>
+                      </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+       
+
+        
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
